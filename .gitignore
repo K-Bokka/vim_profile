@@ -1,5 +1,7 @@
 .netrwhis
-bundles/
+bundles/*
 
+
+!bundles/dein.vim.install.sh
 !.gitkeep
 
