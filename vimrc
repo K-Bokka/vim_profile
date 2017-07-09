@@ -31,9 +31,9 @@ filetype plugin indent on
 syntax enable
 
 " If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
+if dein#check_install()
+  call dein#install()
+endif
 
 "End dein Scripts-------------------------
 
@@ -64,15 +64,13 @@ set mouse=a
 set number
 " カーソル位置を表示
 set ruler
-" 構文強調表示を有効にする
-syntax enable
 " 文字サイズが曖昧な文字を2文字幅に固定する
 set ambiwidth=double
 " タブの表示幅を2文字に指定
 set tabstop=2
 " 不可視文字を可視化する
 set list
-set listchars=tab:>-,trail:-,eol:$,extends:>,precedes:<,nbsp:%
+set listchars=tab:>-,trail:-,eol:↲,extends:>,precedes:<,nbsp:%
 " 現在の行を強調表示
 set cursorline
 " コマンドの一部を最下行に表示する
@@ -102,7 +100,7 @@ set ignorecase
 " 検索文字列に大文字が含まれている場合は区別して検索する
 set smartcase
 " リアルタイム検索
-set incsearch
+"set incsearch
 " 検索時に最後まで行ったら最初に戻る
 set wrapscan
 " 検索語をハイライト表示
