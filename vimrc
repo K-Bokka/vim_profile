@@ -53,7 +53,9 @@ set virtualedit=block,onemore
 " クリップボードにコピー unnamed:normal, autoselect:visual
 set clipboard=unnamed,autoselect
 " ビープ音を視化。要は鳴らないようにする
-set visualbell
+set visualbell t_vb=
+set noerrorbells
+
 " マウスでの操作を可能にする
 set mouse=a
 
@@ -107,6 +109,14 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+" カーソル形状の変更
+if $TERM_PROGRAM == 'iTerm.app'
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+" カーソル形状がすぐに元に戻らないのでタイムアウト時間を調整
+set ttimeoutlen=10
 
 "_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 " 特殊操作
